@@ -21,27 +21,8 @@ L'application est composée de trois services orchestrés par Docker :
 2.**Backend** (FastAPI) : API REST qui gère la logique métier, la sécurité et les appels externes.
 3.**Base de Données** (PostgreSQL) : Stockage persistant des utilisateurs et de leurs mots de passe hachés.
 
-### Schéma technique
 
-```mermaid
-graph TD
-
-
-    subgraph "Docker Network"
-        direction TB
-        API[Backend FastAPI]
-        DB[(PostgreSQL)]
-        API -- "Auth SQL" --> DB
-    end
-
-    Client[💻 Frontend React.js] -- "1️⃣ Login (JSON)" --> API
-    API -- "2️⃣ JWT Token" --> Client
-    Client -- "3️⃣ Requête /translate + Token" --> API
-    API -- "4️⃣ Inférence HTTPS" --> HF[Hugging Face API]
-    HF -- "5️⃣ Traduction" --> API
-    
-  ```  
-- **Workflow d'Authentification & Traduction**
+### Workflow d'Authentification & Traduction**
 1.Login : L'utilisateur envoie ses identifiants (username, password).
 2.JWT : Le backend vérifie le hash dans PostgreSQL et renvoie un access_token.
 3.Requête Protégée : L'utilisateur appelle /translate avec le header TOKEN.
