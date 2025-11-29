@@ -40,7 +40,7 @@ L'application est composée de trois services orchestrés par Docker :
 L'application est conteneurisée. Utilisez Docker Compose pour lancer le Backend, le Frontend et la Base de données simultanément.
   ### 1. Cloner le projet
 ```bash
-git clone <https://github.com/khadija199904/Secure_Translate_Platform_Backend>
+git clone https://github.com/khadija199904/Secure_Translate_Platform_Backend
 cd api_app
 
 ```
@@ -106,7 +106,7 @@ Voici à quoi ressemble l'interface de documentation :
     ```json
     {
       "text": "Bonjour le monde",
-      "direction": "fr-en"
+      
     }
     ```
 *   **Réponse :**
