@@ -5,9 +5,10 @@ from typing import Literal
 
 
 class UserRegister(BaseModel):
-    username : str 
-    password : str
+    username : str
     email : str 
+    password : str
+     
 
 class UserResponse(BaseModel):
     username: str

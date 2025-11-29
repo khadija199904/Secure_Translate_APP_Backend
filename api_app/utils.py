@@ -33,7 +33,7 @@ def create_user (user_data : UserRegister):
 
 # creation token pour nauveau utilisateur
 
-def create_token (user : UserRegister,) :
+def create_token (user:UserRegister,) :
    
     payload = { "Username" : user.username}
     token = jwt.encode(payload,key=SECRET_KEY,algorithm=ALGORITHM)

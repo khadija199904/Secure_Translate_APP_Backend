@@ -7,3 +7,5 @@ uvicorn
 requests
 python-jose[cryptography]
 passlib[argon2]
+pytest
+httpx
